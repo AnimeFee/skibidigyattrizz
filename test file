@@ -3,6 +3,24 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 local Window = Fluent:CreateWindow({
+    Title = "My GUI",
+    Size = UDim2.fromOffset(300, 200),
+    Theme = "Moon",
+})
+
+local Tabs = {
+    Main = Window:AddTab({ Title = "Main", Icon = "settings" }),
+}
+
+local Button = Tabs.Main:AddButton({
+    Title = "Open/Close GUI",
+    Description = "This button will open and close the GUI",
+    Callback = function()
+        Window.Visible = not Window.Visible
+    end
+})
+
+local Window = Fluent:CreateWindow({
     Title = "MercilessHub " .. Fluent.Version,
     SubTitle = "by Merciless",
     TabWidth = 160,
